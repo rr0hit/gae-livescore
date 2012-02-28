@@ -1,0 +1,9 @@
+TODO
+====
+
+1. Have an admin panel from where one can configure competition
+   whitelist and update frequency.
+   
+2. Add ability to make goal details available.
+
+3. Clean up dirty code as much as possible.	

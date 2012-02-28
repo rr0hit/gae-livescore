@@ -1,0 +1,11 @@
+indexes:
+
+- kind: Matches
+  properties:
+  - name: home_side
+  - name: away_side
+  - name: time
+  - name: score
+  - name: competition
+  - name: live
+  - name: finished

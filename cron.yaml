@@ -1,0 +1,4 @@
+cron:
+- description: update scores from livescore.com
+  url: /update
+  schedule: every 5 minutes

@@ -1,0 +1,12 @@
+application: Livescore-API
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /update
+  script: update.py
+  login: admin
+  
+- url: /.*
+  script: getscore.py
