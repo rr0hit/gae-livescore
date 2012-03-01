@@ -9,3 +9,9 @@ indexes:
   - name: competition
   - name: live
   - name: finished
+  - name: date
+  
+- kind: Whitelists
+  properties:
+  - name: url
+  - name: competitions

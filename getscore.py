@@ -24,6 +24,7 @@ class GetscoreByTeams(webapp.RequestHandler):
 									'away_side':r.away_side,
 									'score':r.score,
 									'time':r.time,
+									'date':r.date,
 									'competition':r.competition,
 									'live':r.live,
 									'finished':r.finished})
@@ -38,6 +39,7 @@ class GetscoreByTeams(webapp.RequestHandler):
 									'away_side':r.away_side,
 									'score':r.score,
 									'time':r.time,
+									'date':r.date,
 									'competition':r.competition,
 									'live':r.live,
 									'finished':r.finished})
@@ -67,6 +69,7 @@ class GetscoreByCompetitions(webapp.RequestHandler):
 									'away_side':r.away_side,
 									'score':r.score,
 									'time':r.time,
+									'date':r.date,
 									'competition':r.competition,
 									'live':r.live,
 									'finished':r.finished})
@@ -91,6 +94,7 @@ class GetMatches(webapp.RequestHandler):
 									'away_side':r.away_side,
 									'score':r.score,
 									'time':r.time,
+									'date':r.date,
 									'competition':r.competition,
 									'live':r.live,
 									'finished':r.finished})

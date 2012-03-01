@@ -7,6 +7,11 @@ handlers:
 - url: /update
   script: update.py
   login: admin
+
+- url: /admin
+  script: admin.py
+  login: admin
   
 - url: /.*
   script: getscore.py
+  

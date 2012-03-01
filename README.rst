@@ -7,9 +7,9 @@ to clients in JSON format.
 
 It fetches details of current/upcoming matches and stores them in a 
 database and updates the database after a particular time interval.
-Only matches of whitelisted competitions listed in competitions.txt
-file are tracked. This is to keep resource usage in appspot within
-daily limits.
+Only matches of whitelisted competitions listed in whitelist database 
+are tracked. This is to keep resource usage in appspot within the daily 
+free quota limits.
 
 Legality
 --------
@@ -27,8 +27,8 @@ Usage of the application is completely legal. The FAQ of livescore.com
 		     content by an automated system, being it crawler, spider
 		     or any other automated software.
 		 
-Configuration
--------------
+Configuration before deployment
+-------------------------------
 
 There are a few bits one can configure before deploying the application.
 
@@ -36,12 +36,6 @@ There are a few bits one can configure before deploying the application.
 
 Updates are run as cron jobs. Update the cron.yaml appropriately to adjust 
 frequency of updates.
-
-2. Completitions to track
-
-Competitions to track are to be added to competitions.txt in a single comma 
-separated line without any trailing or preceeding white spaces. Competition
-names are of the form "Nation - Competition Name" for eg. "England - League Two" 
 
 Deployment
 ----------
@@ -69,9 +63,19 @@ Deployment
 7. Deploy the app::
 
 	$appcfg.py update MyApp
-	
+
+Configuration after deployment
+------------------------------
+
+1. You have to set the whitelist, consisting of livescore.com page url and competition names.
+This can be done by logging in as aministrator and filling the form at MyApp.appspot.com/admin
+where further explaination can be found.
+
+The contents of whitelist database can be viewed/deleted from Appspot dashboard > datastore viewer.	
+
 Client End Usage Example in Python
 ----------------------------------
+
 1. All Mathches query:
 
 	>>> from urllib2 import urlopen
@@ -126,9 +130,9 @@ Client End Usage Example in Python
 	
 The data parsed also contains a few more fields. Each query as seen above consists of
 an array of dictionaries corresponding to individual matches. Each match dict consists
-of indices 'home_team', 'away_team', 'score', 'competition' and 'time' which are strings.
-There are two additional indices 'finished' and 'live' which are boolean values representing
-whether match is finished or ongoing.
+of indices 'home_team', 'away_team', 'score', 'competition', 'time' and 'date' which are 
+strings. There are two additional indices 'finished' and 'live' which are boolean values 
+representing whether match is finished or ongoing.
 
 LICENSE
 -------
