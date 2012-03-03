@@ -115,14 +115,14 @@ class Matches(db.Model):
 	or not and "finished" to indicate whether match 
 	is over or not.
 	'''
-	home_side = db.StringProperty(required=True)
-	away_side = db.StringProperty(required=True)
-	time = db.StringProperty(required=True)
-	score = db.StringProperty(required=True)
-	competition = db.StringProperty(required=True)
-	live = db.BooleanProperty(required=True)
-	finished = db.BooleanProperty(required=True)
-	date = db.StringProperty(required=True)
+	home_side = db.StringProperty(required=True, indexed=False)
+	away_side = db.StringProperty(required=True, indexed=False)
+	time = db.StringProperty(required=True, indexed=False)
+	score = db.StringProperty(required=True, indexed=False)
+	competition = db.StringProperty(required=True, indexed=False)
+	live = db.BooleanProperty(required=True, indexed=False)
+	finished = db.BooleanProperty(required=True, indexed=False)
+	date = db.StringProperty(required=True, indexed=False)
 	
 def fetchandstore(url, white):
 	html=urlopen(url).read()
@@ -162,7 +162,6 @@ def main():
 	for r in results:
 		db.delete(r)
 		
-	#generate whitelist from competitions.txt
 	results = db.GqlQuery("SELECT * FROM Whitelists") 
 	for r in results:
 		fetchandstore(r.url,r.competitions)
