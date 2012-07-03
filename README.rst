@@ -1,7 +1,7 @@
-Livescore-API
+gae-livescore
 =============
 
-Livescore-API is a Google App Engine application that takes football 
+gae-livescore is a Google App Engine application that takes football 
 score details from http://www.livescore.com and makes the data available 
 to clients in JSON format.
 
@@ -42,7 +42,7 @@ Deployment
 
 1. Clone Livescore-Api::
 
-    $git clone git@github.com:rr0hit/Livescore-API.git
+    $git clone git@github.com:rr0hit/gae-livescore.git
 
 2. Register your application at appspot.com
 
@@ -50,7 +50,7 @@ Deployment
 
 4. Rename the git directory to the application (for eg. MyApp) name you registered::
 
-	$mv -R Livescore-API MyApp
+	$mv -R gae-livescore MyApp
 
 5. Remove the unwanted files::
 
@@ -58,7 +58,7 @@ Deployment
 		
 6. Replace the application name in app.yaml::
 
-	$sed  s/Livescore-API/MyApp/ MyApp/app.yaml > MyApp/app.yaml
+	$sed  s/gae-livescore/MyApp/ MyApp/app.yaml > MyApp/app.yaml
 	
 7. Deploy the app::
 
